@@ -98,6 +98,7 @@ alias tml="tmux ls"
 alias tma="tmux attach -t "
 export PATH="/home/saket/anaconda/bin:$PATH"
 alias keyserver="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "
+alias lug="ssh skchoudh@lug.usc.edu"
 
 extract () {
    if [ -f $1 ] ; then
