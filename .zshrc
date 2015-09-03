@@ -49,7 +49,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git thefuck autopep8 brew celery github gitignore pep8 pyenv python pylint tmux virtualenv)
+plugins=(git thefuck autopep8 brew celery github gitignore pep8 pyenv python pylint tmux virtualenv per-directory-history)
 
 # User configuration
 
@@ -84,6 +84,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+export IP='128.125.87.111'
+alias ipy="ipython notebook --ip=$IP"
 alias hpc="ssh skchoudh@hpc-cmb.usc.edu"
 alias dev="cd /media/data1/Development_Version_Controlled/"
 alias edx="python /home/saket/software_frozen/edx-downloader/edx-dl.py "
@@ -93,3 +95,24 @@ alias tml="tmux ls"
 alias tma="tmux attach -t "
 export PATH="/home/saket/anaconda/bin:$PATH"
 alias keyserver="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "
+
+extract () {
+   if [ -f $1 ] ; then
+       case $1 in
+           *.tar.bz2)   tar xvjf $1    ;;
+           *.tar.gz)    tar xvzf $1    ;;
+           *.bz2)       bunzip2 $1     ;;
+           *.rar)       unrar x $1       ;;
+           *.gz)        gunzip $1      ;;
+           *.tar)       tar xvf $1     ;;
+           *.tbz2)      tar xvjf $1    ;;
+           *.tgz)       tar xvzf $1    ;;
+           *.zip)       unzip $1       ;;
+           *.Z)         uncompress $1  ;;
+           *.7z)        7z x $1        ;;
+           *)           echo "don't know how to extract '$1'..." ;;
+       esac
+   else
+       echo "'$1' is not a valid file!"
+   fi
+ }
