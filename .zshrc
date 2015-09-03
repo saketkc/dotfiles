@@ -5,7 +5,9 @@ export ZSH=/home/saket/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="lukerandall"
+ZSH_THEME="candy"
+
+#"lukerandall"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +51,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git thefuck autopep8 brew celery github gitignore pep8 pyenv python pylint tmux virtualenv per-directory-history)
+plugins=(git github gitignore tmux per-directory-history)
 
 # User configuration
 
