@@ -89,6 +89,9 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 export IP='128.125.87.111'
 alias ipy="ipython notebook --ip=$IP"
+alias moca="ssh moca.usc.edu"
+alias lug="ssh lug.usc.edu"
+alias rri="ssh rri403b-pc01.cts.usc.edu"
 alias hpc="ssh skchoudh@hpc-cmb.usc.edu"
 alias dev="cd /media/data1/Development_Version_Controlled/"
 alias edx="python /home/saket/software_frozen/edx-downloader/edx-dl.py "
