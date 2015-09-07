@@ -1,13 +1,16 @@
 bamutil
+bedtools
 bpipe
 bwa
 bzip2
 cairo
 cloog018
+curl
 fontconfig
 freetype
 gcc
 gettext
+git-latexdiff
 glib
 gmp
 gmp4
@@ -15,6 +18,7 @@ htslib
 isl
 isl011
 jpeg
+latexdiff
 libffi
 libmpc
 libmpc08
@@ -22,10 +26,12 @@ libpng
 libtiff
 lua
 luajit
+makedepend
 mpfr
 mpfr2
 ncurses
 openblas
+openssl
 pcre
 pixman
 pkg-config
