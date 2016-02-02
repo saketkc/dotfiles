@@ -52,12 +52,13 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github gitignore tmux per-directory-history)
 
 # User configuration
 
-export PATH="/home/saket/.linuxbrew/bin:/home/saket/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/saket/software_frozen/Zotero_linux-x86_64:~/software_frozen/coursera/:/usr/local/stata14:/home/saket/.linuxbrew/Cellar/meme/4.10.1/bin:/home/saket/gopath/bin:/home/saket/software_frozen/Zotero_linux-x86_64:~/software_frozen/coursera/:/usr/local/stata14:/home/saket/.linuxbrew/Cellar/meme/4.10.1/bin:/home/saket/gopath/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/saket/software_frozen/Zotero_linux-x86_64:~/software_frozen/coursera/:/usr/local/stata14:/home/saket/.linuxbrew/Cellar/meme/4.10.1/bin:/home/saket/gopath/bin:/home/saket/software_frozen/Zotero_linux-x86_64:~/software_frozen/coursera/:/usr/local/stata14:/home/saket/.linuxbrew/Cellar/meme/4.10.1/bin:/home/saket/gopath/bin"
+export PATH="/home/saket/anaconda/bin:$PATH:/home/saket/.local/bin:/home/saket/.cabal/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+plugins=(git github gitignore tmux per-directory-history thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,7 +100,6 @@ alias cdl="cd /home/saket/software_frozen/coursera/ && source venv/bin/activate 
 alias tms="tmux new -s "
 alias tml="tmux ls"
 alias tma="tmux attach -t "
-export PATH="/home/saket/anaconda/bin:$PATH"
 alias keyserver="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "
 alias lug="ssh skchoudh@lug.usc.edu"
 
@@ -123,3 +123,4 @@ extract () {
        echo "'$1' is not a valid file!"
    fi
  }
+eval $(thefuck --alias)
