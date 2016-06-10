@@ -52,15 +52,20 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+plugins=(git github gitignore tmux per-directory-history)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/saket/software_frozen/Zotero_linux-x86_64:~/software_frozen/coursera/:/usr/local/stata14:/home/saket/.linuxbrew/Cellar/meme/4.10.1/bin:/home/saket/gopath/bin:/home/saket/software_frozen/Zotero_linux-x86_64:~/software_frozen/coursera/:/usr/local/stata14:/home/saket/.linuxbrew/Cellar/meme/4.10.1/bin:/home/saket/gopath/bin"
-export PATH="/home/saket/anaconda/bin:$PATH:/home/saket/.local/bin:/home/saket/.cabal/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-plugins=(git github gitignore tmux per-directory-history thefuck)
 
 source $ZSH/oh-my-zsh.sh
+
+TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+'avg shared (code):         %X KB'$'\n'\
+'avg unshared (data/stack): %D KB'$'\n'\
+'total (sum):               %K KB'$'\n'\
+'max memory:                %M MB'$'\n'\
+'page faults from disk:     %F'$'\n'\
+'other page faults:         %R'
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -88,6 +93,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+
 export IP='128.125.87.111'
 alias ipy="ipython notebook --ip=$IP"
 alias moca="ssh saket@moca.usc.edu"
@@ -100,8 +106,10 @@ alias cdl="cd /home/saket/software_frozen/coursera/ && source venv/bin/activate 
 alias tms="tmux new -s "
 alias tml="tmux ls"
 alias tma="tmux attach -t "
+export PATH="/home/saket/anaconda2/bin:/home/saket/go/bin:/home/saket/.local/bin:/home/saket/software_frozen/bin:$PATH:/home/saket/software_frozen/meme/bin:/usr/local/MATLAB/R2013b/bin"
 alias keyserver="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "
 alias lug="ssh skchoudh@lug.usc.edu"
+alias lock="/home/saket/software_frozen/i3lock-fancy-master/lock"
 
 extract () {
    if [ -f $1 ] ; then
@@ -123,4 +131,10 @@ extract () {
        echo "'$1' is not a valid file!"
    fi
  }
-eval $(thefuck --alias)
+
+PATH="/home/saket/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/saket/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/saket/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/saket/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/saket/perl5"; export PERL_MM_OPT;
+export GOPATH="/home/saket/software_frozen/gopath"
