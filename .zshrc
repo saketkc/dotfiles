@@ -1,78 +1,64 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/home/saket/.oh-my-zsh
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#ZSH_THEME="amuse"
 ZSH_THEME="mortalscumbag"
-#"candy"
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#"lukerandall"
-
-# Uncomment the following line to use case-sensitive completion.
+# Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
+# Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
+# Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line to disable colors in ls.
+# Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Uncomment following line if you want to disable autosetting terminal title.
+DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
+# Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# Uncomment following line if you want to  shown in the command execution time stamp 
+# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
+# yyyy-mm-dd
+ HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git github gitignore tmux per-directory-history)
+#plugins=(git cp colorize colored-man compleat copyfiles copydir dircycle dipersist extract per-directory-history screen fasd debian)
 
-# User configuration
-
+plugins=(git ssh-agent fasd cp colorized colored-man compleat copyfiles copydir extract screen debian history-substring-search zsh-syntax-highlighting gitfast git-extras git-flow jsontools python vagrant autopep8 github tmux per-directory-history)
 
 source $ZSH/oh-my-zsh.sh
 
-TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
-'avg shared (code):         %X KB'$'\n'\
-'avg unshared (data/stack): %D KB'$'\n'\
-'total (sum):               %K KB'$'\n'\
-'max memory:                %M MB'$'\n'\
-'page faults from disk:     %F'$'\n'\
-'other page faults:         %R'
+# User configuration
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# Preferred editor for local and remote sessions
+# # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
+   export EDITOR='vim'
 else
    export EDITOR='vim'
 fi
@@ -81,59 +67,25 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+eval "$(fasd --init auto)"
+function le()
+{
+ less `f $@`
+}
 
+export PATH="/home/saket/anaconda2/bin:$PATH"
 
-export IP='192.168.0.18'
-alias ipy="ipython notebook --ip=$IP"
-alias moca="ssh saket@moca.usc.edu"
-alias lug="ssh skchoudh@lug.usc.edu"
-alias hpc="ssh skchoudh@hpc-cmb.usc.edu"
-alias dev="cd /media/data1/Development_Version_Controlled/"
-alias edx="python /home/saket/software_frozen/edx-downloader/edx-dl.py "
-alias cdl="cd /home/saket/software_frozen/coursera/ && source venv/bin/activate && ./coursera-dl -n ~/.netrc "
-alias tms="tmux new -s "
-alias tml="tmux ls"
-alias tma="tmux attach -t "
-export PATH="/home/saket/anaconda2/bin:/home/saket/go/bin:/home/saket/.local/bin:/home/saket/software_frozen/bin:$PATH:/home/saket/software_frozen/meme/bin:/usr/local/MATLAB/R2013b/bin"
-alias keyserver="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "
-alias lug="ssh skchoudh@lug.usc.edu"
-alias lock="/home/saket/software_frozen/i3lock-fancy-master/lock"
+# You can use whatever you want as an alias, like for Mondays:
+eval "$(thefuck --alias fuck)"
 
-extract () {
-   if [ -f $1 ] ; then
-       case $1 in
-           *.tar.bz2)   tar xvjf $1    ;;
-           *.tar.gz)    tar xvzf $1    ;;
-           *.bz2)       bunzip2 $1     ;;
-           *.rar)       unrar x $1       ;;
-           *.gz)        gunzip $1      ;;
-           *.tar)       tar xvf $1     ;;
-           *.tbz2)      tar xvjf $1    ;;
-           *.tgz)       tar xvzf $1    ;;
-           *.zip)       unzip $1       ;;
-           *.Z)         uncompress $1  ;;
-           *.7z)        7z x $1        ;;
-           *)           echo "don't know how to extract '$1'..." ;;
-       esac
-   else
-       echo "'$1' is not a valid file!"
-   fi
- }
+PROMPT='
+[%{$fg_bold[blue]%}%n@%m%{$reset_color%}] %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+$ '
 
-PATH="/home/saket/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/saket/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/saket/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/saket/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/saket/perl5"; export PERL_MM_OPT;
-export GOPATH="/home/saket/software_frozen/gopath"
+export RSTUDIO_WHICH_R=/home/saket/anaconda2/lib/R/bin/R
+alias moca='ssh saket@moca.usc.edu'
+alias hpc='ssh skchoudh@hpc-cmb.usc.edu'
+alias hpt='ssh skchoudh@hpc-transfer.usc.edu'
+
