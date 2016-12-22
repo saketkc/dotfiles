@@ -24,7 +24,7 @@ ZSH_THEME="mortalscumbag"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE=true
 
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
@@ -40,7 +40,7 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
- HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -75,7 +75,7 @@ function le()
  less `f $@`
 }
 
-export PATH="/home/saket/anaconda2/bin:$PATH"
+export PATH="/home/saket/anaconda2/bin:/home/saket/software/meme/bin:$PATH"
 
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias fuck)"
@@ -84,8 +84,8 @@ PROMPT='
 [%{$fg_bold[blue]%}%n@%m%{$reset_color%}] %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
 
-export RSTUDIO_WHICH_R=/home/saket/anaconda2/lib/R/bin/R
+#export RSTUDIO_WHICH_R="/home/saket/anaconda2/lib/R/bin/R"
 alias moca='ssh saket@moca.usc.edu'
 alias hpc='ssh skchoudh@hpc-cmb.usc.edu'
 alias hpt='ssh skchoudh@hpc-transfer.usc.edu'
-
+. /home/saket/software/root/bin/thisroot.sh
