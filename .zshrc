@@ -24,7 +24,7 @@ ZSH_THEME="mortalscumbag"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE=true
 
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
@@ -40,20 +40,21 @@ ZSH_THEME="mortalscumbag"
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git cp colorize colored-man compleat copyfiles copydir dircycle dipersist extract per-directory-history screen fasd debian)
 
-plugins=(git ssh-agent fasd cp colorized colored-man compleat copyfiles copydir extract screen debian history-substring-search zsh-syntax-highlighting gitfast git-extras git-flow jsontools python vagrant github tmux per-directory-history)
+plugins=(git ssh-agent fasd cp colorized colored-man compleat copyfiles copydir extract screen debian history-substring-search zsh-syntax-highlighting gitfast git-extras git-flow jsontools python vagrant autopep8 github tmux per-directory-history zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$PATH:/home/saket/software"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -75,18 +76,33 @@ function le()
  less `f $@`
 }
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/home/saket/anaconda2/bin:/home/saket/software/meme/bin:$PATH"
 
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias fuck)"
 
-alias nucleus='ssh saket@nucleus.usc.edu'
-alias hpc='ssh skchoudh@hpc-cmb.usc.edu'
-alias hpt='ssh skchoudh@hpc-transfer.usc.edu'
-alias smt='ssh skchoudh@smithlab.usc.edu'
-
-
 PROMPT='
 [%{$fg_bold[blue]%}%n@%m%{$reset_color%}] %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
+
+#export RSTUDIO_WHICH_R="/home/saket/anaconda2/lib/R/bin/R"
+alias mocal='ssh saket@moca.usc.edu'
+alias hpc='ssh skchoudh@hpc-cmb.usc.edu'
+alias hpt='ssh skchoudh@hpc-transfer.usc.edu'
+alias smt='ssh skchoudh@smithlab.usc.edu'
+. /home/saket/software/root/bin/thisroot.sh
+
+# added by travis gem
+[ -f /home/saket/.travis/travis.sh ] && source /home/saket/.travis/travis.sh
+
+#source /etc/bash_completion.d/climate_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+export PATH="$JAVA_HOME/bin:$PATH"
+PERL5LIB=${PERL5LIB}:${HOME}/src/bioperl-1.6.1
+PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl/modules
+PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl-compara/modules
+PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl-variation/modules
+PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl-funcgen/modules
+export PERL5LIB
